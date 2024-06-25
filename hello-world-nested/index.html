@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+    <script type="text/javascript">
+        var h1 = React.createElement('h1', null, 'Hello world!') // h1 요소를 React 엘리먼트로 생성
+        // ReactDOM.render(
+        //     React.createElement('div', null, h1, h1),
+        //     document.getElementById('content')
+        // )
+
+        class HelloWorld extends React.Component {
+            render() {
+                return React.createElement('div', null, h1, h1)
+            }
+        }
+
+        // ReactDOM.render(
+        //     React.createElement(HelloWorld, null),
+        //     document.getElementById('content')
+        // )
+
+
+        ReactDOM.render(
+            React.createElement('div',
+                null,
+                React.createElement(HelloWorld),
+                React.createElement(HelloWorld),
+                React.createElement(HelloWorld)),
+            document.getElementById('content')
+        )
+    </script>
+</body>
+</html>
